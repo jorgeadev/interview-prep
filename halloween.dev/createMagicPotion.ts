@@ -57,4 +57,4 @@ function createMagicPotion(potions: number[], target: number) {
 	}
 }
 
-console.log(createMagicPotion(potions, goal));
+console.log(createMagicPotion(potions, goal)); // [1, 2]
