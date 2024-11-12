@@ -1,5 +1,5 @@
-const zombies = '242';
-const humans = '334';
+const zombies = "242";
+const humans = "334";
 
 function battleHorde(zombies: string, humans: string) {
 	let z = 0, h = 0;
@@ -7,7 +7,7 @@ function battleHorde(zombies: string, humans: string) {
 		h += Number(humans[i]);
 		z += Number(zombies[i]);
 	}
-	if (z === h) return "x"
+	if (z === h) return "x";
 	return `${ Math.abs(z - h) }${ z > h ? "z" : "h" }`;
 }
 

@@ -1,5 +1,5 @@
-const potions = [1, 4, 3, 6]
-const goal = 7
+const potions = [1, 4, 3, 6];
+const goal = 7;
 
 /*function createMagicPotion(potions: number[], target: number) {
 	let solutions: [number, number][] = [];
@@ -49,9 +49,9 @@ function createMagicPotion(potions: number[], target: number) {
 	
 	for (let i = 0; i < potions.length; i++) {
 		const comp = target - potions[i];
-		if (potionMap.has(comp)) {
+		if (potionMap.has(comp)) 
 			return [potionMap.get(comp)!, i];
-		}
+		
 		potionMap.set(potions[i], i);
 		console.log(potionMap);
 	}
