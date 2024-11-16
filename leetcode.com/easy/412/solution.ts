@@ -25,11 +25,11 @@ const n = 35;
 const fizzBuzz = function(n: number): string[] {
 	return Array.from({length:n}, (_,i) => {
 		i++;
-		let str ='';
+		let str ="";
 		if(i%3 ===0) str+="Fizz";
 		if(i%5 ===0) str+="Buzz";
-		return str || String(i)
-	})
+		return str || String(i);
+	});
 };
 
 console.log(fizzBuzz(n)); // ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]

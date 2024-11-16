@@ -1,14 +1,14 @@
-const whisper = "d~~~~~a";
-const suspects = ["Dracula", "Freddy Krueger", "Jason Voorhees", "Michael Myers"];
+// const whisper = "d~~~~~a";
+// const suspects = ["Dracula", "Freddy Krueger", "Jason Voorhees", "Michael Myers"];
 
-const whisper2 = "~r~dd~";
-const suspects2 = ["Freddy", "Freddier", "Fredderic"];
+// const whisper2 = "~r~dd~";
+// const suspects2 = ["Freddy", "Freddier", "Fredderic"];
 
 const whisper3 = "~r~dd$";
 const suspects3 = ["Freddy", "Freddier", "Fredderic"];
 
-const whisper4 = "mi~~def";
-const suspects4 = ["Midudev", "Midu", "Madeval"];
+// const whisper4 = "mi~~def";
+// const suspects4 = ["Midudev", "Midu", "Madeval"];
 
 function findTheKiller(whisper: string, suspects: string[]) {
 	const endsWithSymbol = whisper.endsWith("$");
@@ -16,7 +16,7 @@ function findTheKiller(whisper: string, suspects: string[]) {
 	const baseWhisper = endsWithSymbol ? whisper.slice(0, -1) : whisper;
 	
 	const wildcardWhisper = baseWhisper.replaceAll("~", ".");
-	const basePattern = `^${ wildcardWhisper }`
+	const basePattern = `^${ wildcardWhisper }`;
 	const endOfPattern = endsWithSymbol ? "$" : ".*$";
 	const completePattern = new RegExp(`${ basePattern }${ endOfPattern }`, "i");
 	

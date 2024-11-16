@@ -1,35 +1,37 @@
-const room = [
-	['.', '.', '#', '.', '▲'],
-	['#', '.', '#', '.', '#'],
-	['.', '.', '.', '.', '.'],
-	['#', '#', '#', '.', '#'],
-	['T', '.', '.', '.', '.'],
-]
+/*const room = [
+	[".", ".", "#", ".", "▲"],
+	["#", ".", "#", ".", "#"],
+	[".", ".", ".", ".", "."],
+	["#", "#", "#", ".", "#"],
+	["T", ".", ".", ".", "."],
+];*/
 
 const room2 = [
-	['T', '.', '#', '.'],
-	['.', '.', '.', '.'],
-	['▲', '.', '.', '#'],
-	['.', '#', '#', '#'],
-]
+	["T", ".", "#", "."],
+	[".", ".", ".", "."],
+	["▲", ".", ".", "#"],
+	[".", "#", "#", "#"],
+];
 
+/*
 const room3 = [
-	['#', '#', '#'],
-	['▲', '.', '#'],
-	['.', '#', 'T'],
-]
+	["#", "#", "#"],
+	["▲", ".", "#"],
+	[".", "#", "T"],
+];
+*/
 
 
 function escapePyramidHead(room: string[][]) {
 	const n = room.length;
 	let start: [number, number] = [0, 0];
 	let target: [number, number] = [0, 0];
-	for (let i = 0; i < n; i++) {
+	for (let i = 0; i < n; i++) 
 		for (let j = 0; j < n; j++) {
-			if (room[i][j] === '▲') start = [i, j];
-			if (room[i][j] === 'T') target = [i, j];
+			if (room[i][j] === "▲") start = [i, j];
+			if (room[i][j] === "T") target = [i, j];
 		}
-	}
+	
 	
 	const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 	
@@ -44,7 +46,7 @@ function escapePyramidHead(room: string[][]) {
 		for (const [dx, dy] of directions) {
 			const nx = x + dx;
 			const ny = y + dy;
-			if (nx >= 0 && nx < n && ny >= 0 && ny < n && room[nx][ny] !== '#' && !visited.has(`${ nx }_${ ny }`)) {
+			if (nx >= 0 && nx < n && ny >= 0 && ny < n && room[nx][ny] !== "#" && !visited.has(`${ nx }_${ ny }`)) {
 				queue.push([nx, ny, steps + 1]);
 				visited.add(`${ nx }_${ ny }`);
 			}
