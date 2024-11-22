@@ -44,7 +44,7 @@ const goal = 7;
 	}
 }*/
 
-function createMagicPotion(potions: number[], target: number) {
+/*function createMagicPotion(potions: number[], target: number) {
 	const potionMap = new Map<number, number>();
 	
 	for (let i = 0; i < potions.length; i++) {
@@ -55,6 +55,22 @@ function createMagicPotion(potions: number[], target: number) {
 		potionMap.set(potions[i], i);
 		console.log(potionMap);
 	}
+}*/
+
+function createMagicPotion(potions: number[], target: number) {
+	let table: Map<number, number> = new Map();
+	
+	for (let i = 0; i < potions.length; i++) {
+		const complement = target - potions[i];
+		if (table.has(complement)) {
+			return [table.get(complement), i];
+		}
+		if (!table.has(potions[i])) {
+			table.set(potions[i], i);
+		}
+	}
+	
+	return undefined;
 }
 
 console.log(createMagicPotion(potions, goal)); // [1, 2]
